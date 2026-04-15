@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teach AI to Love</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Three.js canvas is injected here -->
+    <canvas id="main-canvas"></canvas>
+
+    <!-- Top header bar -->
+    <header id="top-bar">
+      <div id="title-block">
+        <span class="title-main">TEACH AI TO LOVE</span>
+        <span class="title-sub">Reinforcement Learning · Pattern Simulation</span>
+      </div>
+      <nav id="pattern-tabs">
+        <button class="pattern-tab active" data-pattern="color">
+          <span class="tab-icon">◉</span>
+          <span>Color Harmony</span>
+        </button>
+        <button class="pattern-tab" data-pattern="dna">
+          <span class="tab-icon">⬡</span>
+          <span>DNA Match</span>
+        </button>
+        <button class="pattern-tab" data-pattern="vibration">
+          <span class="tab-icon">〜</span>
+          <span>Vibration</span>
+        </button>
+      </nav>
+      <div id="header-controls">
+        <button id="btn-record" title="Record simulation">⏺ REC</button>
+        <button id="btn-save-model" title="Save AI model">💾 Save</button>
+        <button id="btn-load-model" title="Load AI model">📂 Load</button>
+        <button id="btn-reset-model" title="Reset AI">↺ Reset</button>
+      </div>
+    </header>
+
+    <!-- Dashboard overlay (bottom-left) -->
+    <section id="dashboard">
+      <div id="dashboard-stats">
+        <div class="stat-block">
+          <span class="stat-label">Episode</span>
+          <span class="stat-value" id="stat-episode">0</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-label">Reward</span>
+          <span class="stat-value" id="stat-reward">0.00</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-label">Love Bonds</span>
+          <span class="stat-value" id="stat-love">0</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-label">ε (Explore)</span>
+          <span class="stat-value" id="stat-epsilon">1.00</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-label">Steps</span>
+          <span class="stat-value" id="stat-steps">0</span>
+        </div>
+      </div>
+      <canvas id="reward-chart" width="340" height="100"></canvas>
+      <div id="ai-status-bar">
+        <div id="ai-status-indicator" class="status-searching">Searching…</div>
+        <div id="love-meter-wrap">
+          <span class="stat-label">Love</span>
+          <div id="love-meter"><div id="love-fill"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recording badge -->
+    <div id="rec-badge" class="hidden">
+      <span class="rec-dot"></span> RECORDING
+    </div>
+
+    <!-- lil-gui panel is auto-appended by GUI -->
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
